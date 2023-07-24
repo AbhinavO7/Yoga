@@ -48,58 +48,47 @@
           transform: translateX(0px);
         } */
 
-        .accordion{
-          margin: 50px auto;
-          
-        }
-        .accordion li{
+        .cureBlocks{
+          background-color: rgb(255, 225, 241);
           border: 1px solid black;
           border-radius: 12px;
-          margin:20px;
-          padding:15px;
-          background-color: rgb(251, 202, 227);
-        }
-        .accordion li label{
-          display:flex;
-          align-items: center;
           padding: 10px;
-          font-weight: 700;
-          cursor:pointer
-        }
-        label::before{
-          content: '+';
-          margin-right:10px;
-          font-size:20px;
-          font-weight:700;
-        }
-        input[type="radio"]{
-          display: none;
-        }
+          margin: 10px auto;
+      }
+    .collapsible {
+        border-radius: 12px;
+        background-color: rgb(255, 225, 241);
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+    }
 
-         .accordion .cures{
-          max-height: 0;
-          overflow:hidden;
-          transition: max-height .5s , padding 0.5s;
-         }
+    .active, .collapsible:hover {
+      background-color: rgb(251, 202, 227);
+    }
 
-         .accordion input[type="radio"]:checked +label + .cures{
-          
-          max-height:fit-content;
-          padding: 10px;
-
-         }
-         .accordion input[type="radio"]:checked +label + .accordion{
-          width: 80vw;
-
-         }
-         .accordion input[type="radio"]:checked +label::before{
-          content:'-'
-         }
-         .cures li{
-          border:0;
-          padding: 10px;
-          margin:10px;
-         }
+    .content {
+      padding: 0 18px;
+      
+      display: none;
+      overflow: hidden;
+      background-color: rgb(255, 225, 241);
+      
+    }
+    .content li{
+        border:0;
+        padding: 10px;
+        margin:10px;
+        
+        border-radius: 12px;
+        
+        background-color: rgb(251, 202, 227);
+        list-style-type: none;
+      }
          /* Search  */
          #myInput {
           background-image: url('/css/searchicon.png');
@@ -186,7 +175,7 @@
    <div id="about" class="w-[70%] h-28 m-auto flex justify-center items-center">
     <div class="h-1 w-full bg-slate-600"></div>
   </div>
-   <div style="width: 80vw;margin: auto;" id="content1" class="content font-normal">
+   <div style="width: 80vw;margin: auto;" id="content1" class="font-normal">
     <h1 class="text-center text-6xl font-bold mt-5 mb-10" >About Yoga</h1>
       <p class="text-lg text-slate-800">
       
@@ -211,138 +200,132 @@
 </div>
 
  <h1 class="text-center md:text-6xl text-4xl font-bold my-10">Cure Diseases through YOGA</h1>
-   <div>
-      <input type="text" class="w-[90%] md:w-[60%]" id="myInput" onkeyup="searchfunc()" placeholder="Search for diseases..." title="Type in a name">
-
-      <ul class="accordion w-full md:w-[60vw] sm:w-[70vw]" id="myUL">
-        <li class="hid">
-          <input type="radio" name="accordion" id="c1" >
-          <label for="c1">Diabetes</label>
-          <div class="cures bg-pink-100 rounded-lg">
-              <p >
-                Asanas:
-                <ul>
-                  <li>Supta Matsyendrasana</li>
-                  <li>Dhanurasana</li>
-                  <li>Paschimottanasana</li>
-                  <li>Ardhya Matsyendrasana</li>
-                </ul>
-                
-              </p>
-              <p>
-                Pranayama:
-                <ul>
-                  <li>KapalBhati</li>
-                  <li>Bhramari</li>
-                  <li>Bhastrika</li>
-                </ul>
-              </p>
-          </div>
-        </li>
-
-        <li class="hid">
-          <input type="radio" name="accordion" id="c2">
-          <label for="c2">Obesity</label>
-          <div class="cures bg-pink-100 rounded-lg">
-            <p>
+ <div>
+  <input type="text" class="w-[90%] md:w-[60%]" id="myInput" onkeyup="searchfunc()" placeholder="Search for diseases..." title="Type in a name">
+  <div class="cureBlocks w-[90%] md:w-[60%]">
+      <button type="button" class="collapsible">Diabetes</button>
+      <div class="content">
+          <p >
               Asanas:
               <ul>
-                <li>Paschimottanasana</li>
-                <li>Dandasana</li>
-                <li>Paschimottanasana</li>
-                <li>Naukasana</li>
-                <li>Halasana</li>
+              <li>
+                Supta Matsyendrasana
+                <img src="./SuptaMatsyendra.jpg" alt="" > 
+              </li>
+              <li>Dhanurasana</li>
+              <li>Paschimottanasana</li>
+              <li>Ardhya Matsyendrasana</li>
               </ul>
               
-            </p>
-            <p>
+          </p>
+          <p>
               Pranayama:
               <ul>
-                <li>KapalBhati</li>
-                <li>Bhastrika</li>
+              <li>KapalBhati</li>
+              <li>Bhramari</li>
+              <li>Bhastrika</li>
               </ul>
-            </p>
-          </div>
-        </li>
+          </p>
+      </div>
+  </div>
 
-        <li class="hid">
-          <input type="radio" name="accordion" id="c3">
-          <label for="c3">High Blood Pressure</label>
-          <div class="cures bg-pink-100 rounded-lg">
-            <p>
+  <div class="cureBlocks w-[90%] md:w-[60%]">
+  <button type="button" class="collapsible">Obesity</button>
+  <div class="content">
+      <p>
+          Asanas:
+          <ul>
+          <li>Paschimottanasana</li>
+          <li>Dandasana</li>
+          <li>Paschimottanasana</li>
+          <li>Naukasana</li>
+          <li>Halasana</li>
+          </ul>
+          
+      </p>
+      <p>
+          Pranayama:
+          <ul>
+          <li>KapalBhati</li>
+          <li>Bhastrika</li>
+          </ul>
+      </p>
+  </div>
+  </div>
+
+  <div class="cureBlocks w-[90%] md:w-[60%]">
+      <button type="button" class="collapsible">High Blood Pressure</button>
+      <div class="content">
+          <p>
               Asanas:
               <ul>
-                <li>Ardha Matsyendrasana</li>
-                <li>Badhakonasana</li>
-                <li>Janusirsasana</li>
-                <li>Virasana</li>
-                <li>Setu Bandhasana</li>
+              <li>Ardha Matsyendrasana</li>
+              <li>Badhakonasana</li>
+              <li>Janusirsasana</li>
+              <li>Virasana</li>
+              <li>Setu Bandhasana</li>
               </ul>
               
-            </p>
-            <p>
+          </p>
+          <p>
               Pranayama:
               <ul>
-                <li>Anulom Vilom</li>
-                <li>Bhramari</li>
-                <li>KapalBhati</li>
+              <li>Anulom Vilom</li>
+              <li>Bhramari</li>
+              <li>KapalBhati</li>
               </ul>
-            </p>
-          </div>
-        </li>
+          </p>
+      </div>
+  </div>
 
-        <li class="hid">
-          <input type="radio" name="accordion" id="c4">
-          <label for="c4">Back Pain</label>
-          <div class="cures bg-pink-100 rounded-lg">
-            <p>
+  <div class="cureBlocks w-[90%] md:w-[60%]">
+      <button type="button" class="collapsible">Back Pain</button>
+      <div class="content">
+          <p>
               Asanas:
               <ul>
-                <li>Marjaryasana (Cat-Cow Pose)</li>
-                <li>Adho Mukha Svanasana</li>
-                <li>Balasana (Child’s Pose)</li>
-                <li>Uttanasana</li>
-                <li>Supta Matsyendrasana</li>
+              <li>Marjaryasana (Cat-Cow Pose)</li>
+              <li>Adho Mukha Svanasana</li>
+              <li>Balasana (Child’s Pose)</li>
+              <li>Uttanasana</li>
+              <li>Supta Matsyendrasana</li>
               </ul>
               
-            </p>
-            <p>
+          </p>
+          <p>
               Pranayama:
               <ul>
-                <li>Ujjayi Pranayama</li>
-                <li>Dirga Pranayama</li>
+              <li>Ujjayi Pranayama</li>
+              <li>Dirga Pranayama</li>
               </ul>
-            </p>
-          </div>
-        </li>
+          </p>
+      </div>
+  </div>
 
-        <li class="hid">
-          <input type="radio" name="accordion" id="c5">
-          <label for="c5">Asthma</label>
-          <div class="cures bg-pink-100 rounded-lg">
-            <p>
+  <div class="cureBlocks w-[90%] md:w-[60%]">
+      <button type="button" class="collapsible">Asthma</button>
+      <div class="content">
+          <p>
               Asanas:
               <ul>
-                <li>Ardha Matsyendrasana</li>
-                <li>Bhujangasana</li>
-                <li>Setu Bandhasana</li>
-                <li>Poorvottanasana</li>
-                <li>Badhakonasana (Butterfly Pose)</li>
+              <li>Ardha Matsyendrasana</li>
+              <li>Bhujangasana</li>
+              <li>Setu Bandhasana</li>
+              <li>Poorvottanasana</li>
+              <li>Badhakonasana (Butterfly Pose)</li>
               </ul>
               
-            </p>
-            <p>
+          </p>
+          <p>
               Pranayama:
               <ul>
-                <li>KapalBhati</li>
-                <li>Anulom Vilom</li>
+              <li>KapalBhati</li>
+              <li>Anulom Vilom</li>
               </ul>
-            </p>
-          </div>
-        </li>
-
-      </ul>
-   </div >
+          </p>
+      </div>
+  </div>
+</div>
 
 <!-- Daily routine section -->
 <div id="routine" class="w-[70%] h-28 m-auto flex justify-center items-center">
@@ -389,30 +372,58 @@
 
     <!-- Script goes here -->
     <script>
-        
+        const lists=document.querySelector('.lists')
+        function myFunction(x) {
+          lists.classList.toggle("hidden");
+          x.classList.toggle("change");
+        }
+
+
 
         function searchfunc() {
-          var input, filter, ul, li, a, i, txtValue, hid;
+        var input, filter,block,name, a, i, txtValue, hid;
         input = document.getElementById("myInput");
         filter = input.value.toUpperCase();
-        ul = document.getElementById("myUL");
-        li = ul.getElementsByTagName("label");
-        hid= ul.getElementsByClassName("hid");
-        for (i = 0; i < li.length; i++) {
-            a = li[i].innerHTML;
+        block = document.getElementsByClassName("cureBlocks")
+        name = document.getElementsByClassName("collapsible")
+        
+        for (i = 0; i < block.length; i++) {
+            a = name[i].innerHTML;
             console.log(a.toUpperCase())
             
             if (a.toUpperCase().indexOf(filter) > -1) {
-                li[i].style.display = "";
-                hid[i].style.display = "";
+                block[i].style.display = "";
+                
                 
 
             } else {
-                hid[i].style.display = "none";
+                block[i].style.display = "none";
             }
         }
       }
 
+
+
+      var coll = document.getElementsByClassName("collapsible");
+      var i;
+
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.display === "block") {
+            content.style.display = "none";
+            content.style.height = "0";
+            
+          } else {
+            content.style.display = "block";
+            content.style.height = "fit-content";
+          }
+        });
+      }
+
+
+      
       const observer = new IntersectionObserver((entries)=>{
         entries.forEach((entry) => {
           console.log(entry)
